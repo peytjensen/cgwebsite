@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const WhyCard = ({ icon, title, body, delay, accent }) => (
@@ -14,6 +15,87 @@ const StatBadge = ({ value, label }) => (
     <div className="font-body text-xs text-driftwood tracking-widest uppercase">{label}</div>
   </div>
 )
+
+const GALLERY_TABS = [
+  {
+    label: 'Onboarding',
+    images: [
+      { src: '/behav_tut.png', alt: 'Behavior tutorial' },
+      { src: '/behav_survey_1.png', alt: 'Behavior survey' },
+      { src: '/interest_tut.png', alt: 'Interest tutorial' },
+      { src: '/interest_page.png', alt: 'Interest selection' },
+    ],
+  },
+  {
+    label: 'App',
+    images: [
+      { src: '/classes.png', alt: 'Classes' },
+      { src: '/chat.png', alt: 'Chat' },
+      { src: '/notifications.png', alt: 'Notifications' },
+      { src: '/events.png', alt: 'Events' },
+    ],
+  },
+]
+
+const ALL_GALLERY_IMAGES = [
+  { src: '/behav_tut.png', alt: 'Behavior tutorial' },
+  { src: '/behav_survey_1.png', alt: 'Behavior survey' },
+  { src: '/interest_tut.png', alt: 'Interest tutorial' },
+  { src: '/interest_page.png', alt: 'Interest selection' },
+  { src: '/classes.png', alt: 'Classes' },
+  { src: '/chat.png', alt: 'Chat' },
+  { src: '/notifications.png', alt: 'Notifications' },
+  { src: '/events.png', alt: 'Events' },
+]
+
+function AppGallery() {
+  const [activeTab, setActiveTab] = useState(0)
+  const tabs = ['All', 'Onboarding', 'App']
+  const images =
+    activeTab === 0
+      ? ALL_GALLERY_IMAGES
+      : GALLERY_TABS[activeTab - 1].images
+
+  return (
+    <section className="py-24 bg-parchment">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <span className="inline-block font-body text-xs text-sienna font-medium tracking-widest uppercase mb-4">Screenshots</span>
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-bark mb-4">See it in action</h2>
+          <p className="font-body text-stone text-lg max-w-xl mx-auto">
+            A look inside the app, from first setup to daily campus life.
+          </p>
+        </div>
+
+        {/* Tab bar */}
+        <div className="flex justify-center gap-2 mb-10">
+          {tabs.map((tab, i) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(i)}
+              className={`px-5 py-2 rounded-full font-body text-sm font-medium transition-all duration-200 ${
+                activeTab === i
+                  ? 'bg-bark text-cream shadow'
+                  : 'bg-cream text-stone border border-sand hover:border-tan hover:text-walnut'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid — 2 columns */}
+        <div className="grid grid-cols-2 gap-6">
+          {images.map(({ src, alt }) => (
+            <div key={src} className="rounded-2xl overflow-hidden border border-sand shadow-md bg-white flex items-center justify-center">
+              <img src={src} alt={alt} className="w-full h-auto object-contain" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function Home() {
   return (
@@ -184,30 +266,25 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Feature chips */}
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { icon: '🎓', label: 'CAS SSO Login', bg: 'bg-linen' },
-                { icon: '📅', label: 'Campus Events', bg: 'bg-cream' },
-                { icon: '💬', label: 'Group Chats', bg: 'bg-linen' },
-                { icon: '🧊', label: 'Icebreaker Gates', bg: 'bg-cream' },
-                { icon: '🗓️', label: 'Hangouts', bg: 'bg-linen' },
-                { icon: '🔔', label: 'Push Notifications', bg: 'bg-cream' },
-                { icon: '🧑‍🤝‍🧑', label: 'Friend System', bg: 'bg-linen' },
-                { icon: '🛡️', label: 'AI Moderation', bg: 'bg-cream' },
-              ].map(({ icon, label, bg }) => (
-                <div
-                  key={label}
-                  className={`flex items-center gap-3 px-4 py-4 rounded-xl ${bg} border border-sand hover:border-tan/60 hover:shadow-sm transition-all duration-200`}
-                >
-                  <span className="text-xl">{icon}</span>
-                  <span className="font-body text-sm text-bark font-medium">{label}</span>
-                </div>
-              ))}
+            {/* Phone screenshot */}
+            <div className="relative flex justify-center">
+              <div aria-hidden className="absolute inset-0 -z-10 flex items-center justify-center">
+                <div className="w-48 h-64 rounded-full bg-tan/20 blur-3xl" />
+              </div>
+              <img
+                src="/events.png"
+                alt="CommonGround events screen"
+                className="relative z-10 w-64 rounded-[2.5rem] shadow-2xl border-4 border-bark object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
+
+      <hr className="divider-warm" />
+
+      {/* ── APP GALLERY ──────────────────────────────────────── */}
+      <AppGallery />
 
       {/* ── CTA BANNER ───────────────────────────────────────── */}
       <section className="py-20 bg-bark relative overflow-hidden">
