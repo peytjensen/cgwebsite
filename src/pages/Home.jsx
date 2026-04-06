@@ -140,7 +140,7 @@ export default function Home() {
               delay={3}
               icon="🔒"
               title="Safe by Design"
-              body="Every message is screened in real time. Every event goes through admin review. Built for a campus environment where safety isn't optional."
+              body="Every message is screened in real time and every event goes through admin review before it goes live. CommonGround is a space you can actually trust."
               accent="bg-cream border-sand/60 hover:border-tan/60"
             />
           </div>

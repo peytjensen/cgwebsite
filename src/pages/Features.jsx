@@ -86,13 +86,13 @@ export default function Features() {
           },
           {
             icon: '🧠',
-            title: 'Behavior Survey',
-            body: '5 questions across 5 screens surface your social preferences and shape how the platform connects you with others.',
+            title: 'Personalized from Day One',
+            body: 'Answer a few quick questions about how you like to socialize. CommonGround uses your answers to shape who and what it surfaces for you from the start.',
           },
           {
             icon: '🏷️',
             title: 'Interest Tagging',
-            body: 'Multi-category interest selection with scored relevance weights. Not a flat list — it\'s an interest graph that drives intelligent matching.',
+            body: 'Tag the topics you actually care about across dozens of categories. The more you share, the better CommonGround gets at connecting you to the right people.',
           },
           {
             icon: '📚',
@@ -100,14 +100,9 @@ export default function Features() {
             body: 'Register the courses you\'re actually enrolled in. Your class list becomes an organic connection engine.',
           },
           {
-            icon: '📖',
-            title: 'First-Visit Tutorials',
-            body: 'All 12 major screens feature a contextual tutorial on first visit, permanently dismissed after. No popup spam.',
-          },
-          {
             icon: '🖼️',
-            title: 'Rich User Profiles',
-            body: 'Profile photo via Oracle Cloud signed PARs, bio, displayed interests, and registered classes. Viewable inline throughout the app.',
+            title: 'Your Profile, Your Story',
+            body: 'Show off your photo, bio, interests, and classes in one place. Tap any avatar anywhere in the app to see someone\'s full profile without losing your spot.',
           },
         ]}
       />
@@ -174,8 +169,8 @@ export default function Features() {
           },
           {
             icon: '✨',
-            title: 'Suggested Chats (Edge Function)',
-            body: 'A serverside recommendation engine cross-references your classes and interests to propose the most relevant chats, including ones that don\'t exist yet.',
+            title: 'Smart Chat Suggestions',
+            body: 'CommonGround surfaces the group chats you\'d actually want to join based on your classes and interests. It even suggests creating new ones when nothing quite fits.',
           },
           {
             icon: '🧊',
@@ -184,8 +179,8 @@ export default function Features() {
           },
           {
             icon: '⚡',
-            title: 'Realtime Messaging',
-            body: 'Built on Supabase\'s Postgres Realtime engine with epoch tracking for stale callbacks, polling reconciliation fallback, and foreground refresh detection.',
+            title: 'Messages That Just Work',
+            body: 'Messages arrive instantly and stay in sync whether you\'re actively in the chat or jumping back in after switching apps. No refreshing, no missing messages.',
           },
           {
             icon: '↩️',
@@ -194,8 +189,8 @@ export default function Features() {
           },
           {
             icon: '🔗',
-            title: 'Supabase RPC Operations',
-            body: 'Chat creation, group initialization, and complex operations run through Postgres RPC functions, keeping business logic server-side.',
+            title: 'Everything Stays Connected',
+            body: 'Join a chat, RSVP to an event, or add a class and the rest of your experience updates automatically. No gaps, no manual setup.',
           },
         ]}
       />
@@ -311,8 +306,8 @@ export default function Features() {
           },
           {
             icon: '🎯',
-            title: 'Contextual Triggers',
-            body: 'Notifications are sent via Supabase Edge Functions, triggered by database events, making them reliable and serverside.',
+            title: 'Always Timely',
+            body: 'Notifications go out the moment something happens, whether that\'s a friend request, a new message, or an event update. No delays, no batching.',
           },
           {
             icon: '⚙️',
