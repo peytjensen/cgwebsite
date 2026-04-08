@@ -237,7 +237,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Text */}
             <div>
-              <span className="inline-block font-body text-xs text-moss font-medium tracking-widest uppercase mb-4">How It Works</span>
+              <span className="inline-block font-body text-xs text-moss font-medium tracking-widest uppercase mb-4">Tutorial</span>
               <h2 className="font-display text-4xl font-medium text-bark mb-6 leading-tight">
                 From class roster to<br />
                 <em className="not-italic text-forest">actual friendships</em>
