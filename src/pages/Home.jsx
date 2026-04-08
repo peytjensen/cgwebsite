@@ -18,15 +18,6 @@ const StatBadge = ({ value, label }) => (
 
 const GALLERY_TABS = [
   {
-    label: 'Onboarding',
-    images: [
-      { src: '/behav_tut.png', alt: 'Behavior tutorial' },
-      { src: '/behav_survey_1.png', alt: 'Behavior survey' },
-      { src: '/interest_tut.png', alt: 'Interest tutorial' },
-      { src: '/interest_page.png', alt: 'Interest selection' },
-    ],
-  },
-  {
     label: 'App',
     images: [
       { src: '/classes.png', alt: 'Classes' },
@@ -35,26 +26,21 @@ const GALLERY_TABS = [
       { src: '/events.png', alt: 'Events' },
     ],
   },
+  {
+    label: 'Onboarding',
+    images: [
+      { src: '/behav_tut.png', alt: 'Behavior tutorial' },
+      { src: '/behav_survey_1.png', alt: 'Behavior survey' },
+      { src: '/interest_tut.png', alt: 'Interest tutorial' },
+      { src: '/interest_page.png', alt: 'Interest selection' },
+    ],
+  },
 ]
 
-const ALL_GALLERY_IMAGES = [
-  { src: '/behav_tut.png', alt: 'Behavior tutorial' },
-  { src: '/behav_survey_1.png', alt: 'Behavior survey' },
-  { src: '/interest_tut.png', alt: 'Interest tutorial' },
-  { src: '/interest_page.png', alt: 'Interest selection' },
-  { src: '/classes.png', alt: 'Classes' },
-  { src: '/chat.png', alt: 'Chat' },
-  { src: '/notifications.png', alt: 'Notifications' },
-  { src: '/events.png', alt: 'Events' },
-]
 
 function AppGallery() {
   const [activeTab, setActiveTab] = useState(0)
-  const tabs = ['All', 'Onboarding', 'App']
-  const images =
-    activeTab === 0
-      ? ALL_GALLERY_IMAGES
-      : GALLERY_TABS[activeTab - 1].images
+  const images = GALLERY_TABS[activeTab].images
 
   return (
     <section className="py-24 bg-parchment">
@@ -69,9 +55,9 @@ function AppGallery() {
 
         {/* Tab bar */}
         <div className="flex justify-center gap-2 mb-10">
-          {tabs.map((tab, i) => (
+          {GALLERY_TABS.map((tab, i) => (
             <button
-              key={tab}
+              key={tab.label}
               onClick={() => setActiveTab(i)}
               className={`px-5 py-2 rounded-full font-body text-sm font-medium transition-all duration-200 ${
                 activeTab === i
@@ -79,7 +65,7 @@ function AppGallery() {
                   : 'bg-cream text-stone border border-sand hover:border-tan hover:text-walnut'
               }`}
             >
-              {tab}
+              {tab.label}
             </button>
           ))}
         </div>
