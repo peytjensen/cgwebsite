@@ -217,23 +217,24 @@ export default function Home() {
 
       <hr className="divider-warm" />
 
-      {/* ── FEATURE PREVIEW ──────────────────────────────────── */}
+      {/* ── TUTORIAL TEASER ──────────────────────────────────── */}
       <section className="py-24 bg-cream">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Text */}
             <div>
-              <span className="inline-block font-body text-xs text-moss font-medium tracking-widest uppercase mb-4">Tutorial</span>
+              <span className="inline-block font-body text-xs text-moss font-medium tracking-widest uppercase mb-4">Getting Started</span>
               <h2 className="font-display text-4xl font-medium text-bark mb-6 leading-tight">
-                From class roster to<br />
-                <em className="not-italic text-forest">actual friendships</em>
+                Up and running in<br />
+                <em className="not-italic text-forest">five simple steps</em>
               </h2>
-              <div className="space-y-6 mb-8">
+              <div className="space-y-4 mb-8">
                 {[
-                  { step: '01', text: 'Sign in with your U of U credentials. One tap, no new account.' },
-                  { step: '02', text: 'Complete a brief interest and behavior survey to shape your experience.' },
-                  { step: '03', text: 'Register the classes you\'re enrolled in. They become instant connection points.' },
-                  { step: '04', text: 'Discover events, join group chats, and meet people who share your world.' },
+                  { step: '01', text: 'Sign in with your U of U credentials.' },
+                  { step: '02', text: 'Complete a brief interest and behavior survey.' },
+                  { step: '03', text: 'Register the classes you\'re enrolled in.' },
+                  { step: '04', text: 'Discover events and RSVP with one tap.' },
+                  { step: '05', text: 'Connect through group chats in real time.' },
                 ].map(({ step, text }) => (
                   <div key={step} className="flex items-start gap-5">
                     <span className="font-display text-sm font-medium text-tan mt-0.5 w-7 shrink-0">{step}</span>
@@ -242,10 +243,10 @@ export default function Home() {
                 ))}
               </div>
               <Link
-                to="/features"
+                to="/tutorial"
                 className="inline-flex items-center gap-2 font-body text-sm font-medium text-walnut hover:text-bark transition-colors duration-200 group border-b border-walnut/30 hover:border-bark pb-0.5"
               >
-                See all features
+                View full tutorial
                 <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
